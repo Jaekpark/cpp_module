@@ -1,6 +1,6 @@
 INCS				=	PhoneBook.hpp
 SRCS				=	PhoneBook.cpp Contact.cpp main.cpp
-OBJS				= 	$(patsubst %.c, %.o, $(SRCS_FILE))
+OBJS				= 	$(patsubst %.cpp, %.o, $(SRCS_FILE))
 SRCS_DIR			=	./
 OBJS_DIR			=	./
 INCS_DIR			=	./
