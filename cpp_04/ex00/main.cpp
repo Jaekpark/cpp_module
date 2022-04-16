@@ -12,8 +12,9 @@ void	printInfo(std::string str) {
 }
 
 void firstTest(void) {
-	printInfo("Animal Class Test");
+	printInfo("Basic");
 	Animal::printHeader();
+
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
@@ -30,10 +31,10 @@ void firstTest(void) {
 	std::cout << std::endl;
 }
 
-void	secondTest(void) {
-	std::cout << std::endl;	
-	printInfo("Animal Class Test");
+void	secondTest(void) {	
+	printInfo("Animal (virtual function)");
 	Animal::printHeader();
+
 	const Animal* correct_meta = new Animal();
 	const Animal* correct = new Cat();
 
@@ -46,7 +47,8 @@ void	secondTest(void) {
 	delete(correct);
 
 	std::cout << std::endl;
-	printInfo("Wrong Animal Class Test");
+	printInfo("Wrong Animal (non-virtual function)");
+
 	WrongAnimal::printHeader();
 	const WrongAnimal* wrong_meta = new WrongAnimal();
 	const WrongAnimal* wrong = new WrongCat();
