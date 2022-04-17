@@ -1,26 +1,81 @@
-CC = clang++
-FLAGS = -Wall -Wextra -Werror
-NAME = megaphone
-SRCS = ./megaphone.cpp
-OBJS = $(SRCS:.cpp=.o)
+INCS				=	
+SRCS				=	megaphone.cpp
+OBJS				= 	$(patsubst %.cpp, %.o, $(SRCS_FILE))
+SRCS_DIR			=	./
+OBJS_DIR			=	./
+INCS_DIR			=	./
 
-all		: $(NAME)
+SRCS_FILE			=	$(addprefix $(SRCS_DIR), $(SRCS))
+OBJS_FILE			= 	$(addprefix $(OBJS_DIR), $(notdir $(OBJS)))
+INCS_FILE			= 	$(addprefix $(INCS_DIR), $(INCS))
 
-.cpp.o	:
-	@$(CC) $(FLAGS) -c $< -o $(OBJS)
+#	Compile settings
+CC					=	clang++
+RM					=	rm -rf
+CFLAGS				=	-Wall -Wextra -Werror -g -std=c++98
+DFLAGS				= 	-Wall -Wextra -Werror -g -std=c++98 -fsanitize=address
+HEADER_FLAG			=	-I$(INCS_DIR)
+NAME				=	megaphone
 
-$(NAME)	:	$(OBJS)
-	@$(CC) $(FLAGS) $(OBJS) -o $@
-	@echo "$(NAME) complete."
+#	Color settings
+BLACK			=	"\033[1;30m"
+RED				=	"\033[1;31m"
+GREEN			=	"\033[1;32m"
+YELLOW			=	"\033[1;33m"
+BLUE			=	"\033[1;34m"
+CYAN			=	"\033[1;35m"
+PURPLE			=	"\033[1;36m"
+WHITE			=	"\033[1;37m"
+EOC				=	"\033[0;0m"
 
-clean	:
-	@rm $(OBJS)
-	@echo "clean $(OBJS)"
+.cpp.o			:
+					@clear
+					@echo $(BLUE)
+					$(CC) $(CFLAGS) -c $< -o $(addprefix $(OBJS_DIR), $(notdir $@))
+					@echo $(EOC)
 
-fclean	:
-	@rm $(OBJS) $(NAME)
-	@echo "full clean"
+all				:	$(NAME)
 
-re		: fclean $(NAME)
+debug			:	$(DEBUG)
 
-.PHONY	:	all clean fclean re
+
+$(NAME)			:	$(OBJS_DIR) $(OBJS)
+					@clear
+					@echo $(GREEN)
+					$(CC) $(CFLAGS) $(HEADER_FLAG) $(OBJS_FILE) -o $@
+					@echo $(EOC)
+					@echo $(YELLOW) "`date +%y/%m/%d_%H:%M:%S`:: Compiling $@"
+					@echo $(GREEN) "`date +%y/%m/%d_%H:%M:%S`:: OK" $(EOC)
+
+$(DEBUG)		:	$(OBJS_DIR) $(OBJS)
+					@clear
+					@echo $(PURPLE)
+					$(CC) $(DFLAGS) $(HEADER_FLAG) $(OBJS_FILE) -o $@
+					@echo $(EOC)
+					@echo $(YELLOW) "`date +%y/%m/%d_%H:%M:%S`:: Compiling $@"
+					@echo $(GREEN) "`date +%y/%m/%d_%H:%M:%S`:: OK" $(EOC)
+
+$(OBJS_DIR)		:
+					@mkdir -p $(OBJS_DIR)
+
+norm			:	$(SRCS_FILE) $(INCS_FILE)
+					@echo $(CYAN) "`date +%y/%m/%d_%H:%M:%S`:: $(NAME) norm check"$(EOC)
+					@norminette $(SRCS_FILE) $(INCS_FILE)
+					@make norm -C $(LIBFT_DIR)
+
+leaks			:
+	 				@osascript -e 'tell app "Terminal" to do script "while true; do leaks minishell; sleep 2; clear; done"'
+
+clean			:
+					@echo $(YELLOW) "`date +%y/%m/%d_%H:%M:%S`:: clean $(NAME)" $(EOC)
+					@$(RM) $(OBJS_FILE) 
+					@echo $(GREEN) "`date +%y/%m/%d_%H:%M:%S`:: OK" $(EOC)
+
+fclean			:
+					@echo $(YELLOW) "`date +%y/%m/%d_%H:%M:%S`:: fclean $(NAME)" $(EOC)
+					@$(RM) $(DEBUG) $(NAME) $(OBJS_FILE)
+					@echo $(GREEN) "`date +%y/%m/%d_%H:%M:%S`:: OK" $(EOC)
+
+re				:	fclean $(NAME)
+
+.PHONY:			all clean fclean re norm leaks debug
