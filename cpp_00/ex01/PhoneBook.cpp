@@ -1,6 +1,6 @@
 #include "PhoneBook.hpp"
 
-void PhoneBook::printHeader() const {
+void	PhoneBook::printHeader(void) const {
 	std::cout << "|" << std::setw(WIDTH) << std::setfill('+') << "|" << std::endl;
 	std::cout << "|" << std::setw(WIDTH) << std::setfill(' ') << "|" << std::endl;
 	std::cout << "|" << std::setw(WIDTH) << std::setfill(' ') << TITLE << std::endl;
@@ -13,7 +13,7 @@ void PhoneBook::printHeader() const {
 	std::cout << std::endl << "I'm Crappy Awesome Phone Book!" << std::endl;
 }
 
-void PhoneBook::printManual() const {
+void	PhoneBook::printManual(void) const {
 	std::cout << std::endl << BOLD << "You can use three kinds of commands." << std::endl;
 	std::cout << std::endl;
 	std::cout << GREEN << "(1) " << add_ << "\t\t:	Save a new contact." << std::endl;
@@ -22,8 +22,8 @@ void PhoneBook::printManual() const {
 	std::cout << EOC << std::endl;
 }
 
-void PhoneBook::printAddPanel() const {
-	int index = index_ % 8;
+void	PhoneBook::printAddPanel(void) const {
+	int	index = index_ % 8;
 
 	std::cout << std::endl;
 	if (index_ < 8) {
@@ -41,7 +41,7 @@ void PhoneBook::printAddPanel() const {
 	std::cout << std::endl;
 }
 
-void PhoneBook::printSearchPanel() const {
+void	PhoneBook::printSearchPanel(void) const {
 	std::cout << std::endl;
 	std::cout << "|" << std::setfill('-') << std::setw(44) << "|" << std::endl;
 	std::cout << std::setfill(' ');
@@ -54,8 +54,8 @@ void PhoneBook::printSearchPanel() const {
 	std::cout << std::setfill(' ');
 }
 
-void PhoneBook::printContact(int index) const {
-	std::string target[3];
+void	PhoneBook::printContact(int index) const {
+	std::string	target[3];
 
 	target[0] = contact_[index].getFirstName();
 	target[1] = contact_[index].getLastName();
@@ -71,7 +71,7 @@ void PhoneBook::printContact(int index) const {
 	std::cout << "|" << std::endl;
 }
 
-void PhoneBook::getCommand() {
+void	PhoneBook::getCommand(void) {
 	std::string cmd;
 	std::string message = "Please enter a command.";
 
@@ -80,7 +80,7 @@ void PhoneBook::getCommand() {
 	cmd_ = cmd;
 }
 
-void PhoneBook::eraseWhiteSpace(std::string& target) const {
+void	PhoneBook::eraseWhiteSpace(std::string& target) const {
 	std::string whitespaces = " \t\f\v\n\r";
 	std::size_t found;
 
@@ -89,7 +89,7 @@ void PhoneBook::eraseWhiteSpace(std::string& target) const {
 		target.erase(found + 1);
 }
 
-int PhoneBook::checkCommand() {
+int		PhoneBook::checkCommand() {
 	if (cmd_.compare(add_) == 0)
 		return ADD;
 	else if (cmd_.compare(search_) == 0)
@@ -99,7 +99,7 @@ int PhoneBook::checkCommand() {
 	return ERROR;
 }
 
-void PhoneBook::executeAdd() {
+void	PhoneBook::executeAdd(void) {
 	std::string input[FIELD_COUNT];
 
 	printAddPanel();
@@ -109,7 +109,7 @@ void PhoneBook::executeAdd() {
 	index_++;
 }
 
-void PhoneBook::executeSearch() {
+void	PhoneBook::executeSearch(void) {
 	if (index_ == 0) {
 		std::cout << RED << ">> " << "Sorry. Phone book is empty." << std::endl;
 		std::cout << EOC << std::endl;
@@ -129,7 +129,7 @@ void PhoneBook::executeSearch() {
 	}
 }
 
-void PhoneBook::saveContact(std::string *input) {
+void	PhoneBook::saveContact(std::string *input) {
 	int index = index_ % 8;
 
 	contact_[index].setContact(FIRST_NAME, input[FIRST_NAME]);
@@ -151,7 +151,7 @@ void PhoneBook::saveContact(std::string *input) {
 	}
 }
 
-int PhoneBook::searchContact() {
+int		PhoneBook::searchContact(void) {
 	std::string input;
 	std::string message = "Please enter the index number of contact. (0 to close)";
 	int index;
@@ -179,7 +179,7 @@ int PhoneBook::searchContact() {
 	return 0;
 }
 
-int PhoneBook::getUserInput(std::string *message, std::string *target, int size) {
+int		PhoneBook::getUserInput(std::string *message, std::string *target, int size) {
 	if (!message || !target)
 		return 1;
 	for (int i = 0; i < size; i++) {
@@ -192,7 +192,7 @@ int PhoneBook::getUserInput(std::string *message, std::string *target, int size)
 	return 0;
 }
 
-PhoneBook::PhoneBook() {
+PhoneBook::PhoneBook(void) {
 	index_ = 0;
 	add_ = "ADD";
 	search_ = "SEARCH";
@@ -204,7 +204,7 @@ PhoneBook::PhoneBook() {
 	field_[4] = "Darkest Secret";
 }
 
-PhoneBook::~PhoneBook() {
+PhoneBook::~PhoneBook(void) {
 	std::cout << YELLOW << std::endl;
 	std::cout << "Thank you for using the phone book." << std::endl;
 	std::cout << std::endl;

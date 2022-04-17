@@ -1,19 +1,18 @@
 #include "PhoneBook.hpp"
 
-int main(void)
-{
-	PhoneBook pb;
+int main(void) {
+	PhoneBook phone_book;
 
-	pb.printHeader();
+	phone_book.printHeader();
 	while (true) {
-		pb.printManual();
-		pb.getCommand();
-		switch(pb.checkCommand()) {
+		phone_book.printManual();
+		phone_book.getCommand();
+		switch(phone_book.checkCommand()) {
 			case ADD:
-				pb.executeAdd();
+				phone_book.executeAdd();
 				continue;
 			case SEARCH:
-				pb.executeSearch();
+				phone_book.executeSearch();
 				continue;
 			case EXIT:
 				return 0;

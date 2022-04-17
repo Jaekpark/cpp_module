@@ -5,7 +5,7 @@
 #include <iostream>
 #include <iomanip>
 
-enum InputType {
+enum	InputType {
 	FIRST_NAME = 0,
 	LAST_NAME,
 	NICK_NAME,
@@ -13,24 +13,24 @@ enum InputType {
 	SECRET
 };
 
-class Contact {
+class	Contact {
 	private:
-		std::string first_name_;
-		std::string last_name_;
-		std::string nick_name_;
-		std::string phone_number_;
-		std::string secret_;
+		std::string	first_name_;
+		std::string	last_name_;
+		std::string	nick_name_;
+		std::string	phone_number_;
+		std::string	secret_;
 
 	public:
-		void setContact(InputType type, std::string user_input);
-		void printContact() const;
-		std::string getFirstName() const;
-		std::string getLastName() const;
-		std::string getNickName() const;
-		std::string getPhoneNumber() const;
-		std::string getSecret() const;
-		Contact();
-		~Contact();
+		void		setContact(InputType type, std::string user_input);
+		void		printContact(void) const;
+		std::string	getFirstName(void) const;
+		std::string	getLastName(void) const;
+		std::string	getNickName(void) const;
+		std::string	getPhoneNumber(void) const;
+		std::string	getSecret(void) const;
+		Contact(void);
+		~Contact(void);
 };
 
 #endif
