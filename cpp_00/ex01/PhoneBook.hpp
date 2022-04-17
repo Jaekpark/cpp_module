@@ -26,30 +26,30 @@ enum Command {
 
 class PhoneBook {
 	private:
-		int index_;
-		std::string cmd_;
-		std::string add_;
-		std::string search_;
-		std::string exit_;
-		std::string field_[5];
-		Contact contact_[LIMIT];
+		int			index_;
+		std::string	cmd_;
+		std::string	add_;
+		std::string	search_;
+		std::string	exit_;
+		std::string	field_[5];
+		Contact		contact_[LIMIT];
 	
 	public:
-		void executeAdd();
-		void executeSearch();
-		void printHeader() const;
-		void printManual() const;
-		void printAddPanel() const;
-		void printSearchPanel() const;
-		void printContact(int index) const;
-		void getCommand();
-		int	checkCommand();
-		void saveContact(std::string *input);
-		int searchContact();
-		int getUserInput(std::string *message, std::string *target, int size);
-		void eraseWhiteSpace(std::string& target) const;
-		PhoneBook();
-		~PhoneBook();
+		void	executeAdd(void);
+		void	executeSearch(void);
+		void	printHeader(void) const;
+		void	printManual(void) const;
+		void	printAddPanel(void) const;
+		void	printSearchPanel(void) const;
+		void	printContact(int index) const;
+		void	getCommand(void);
+		int		checkCommand(void);
+		void	saveContact(std::string *input);
+		int		searchContact(void);
+		int		getUserInput(std::string *message, std::string *target, int size);
+		void	eraseWhiteSpace(std::string& target) const;
+		PhoneBook(void);
+		~PhoneBook(void);
 };
 
 #endif

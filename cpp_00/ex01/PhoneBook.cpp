@@ -81,8 +81,8 @@ void	PhoneBook::getCommand(void) {
 }
 
 void	PhoneBook::eraseWhiteSpace(std::string& target) const {
-	std::string whitespaces = " \t\f\v\n\r";
-	std::size_t found;
+	std::string	whitespaces = " \t\f\v\n\r";
+	std::size_t	found;
 
 	found = target.find_last_not_of(whitespaces);
 	if (found != std::string::npos)
@@ -100,7 +100,7 @@ int		PhoneBook::checkCommand() {
 }
 
 void	PhoneBook::executeAdd(void) {
-	std::string input[FIELD_COUNT];
+	std::string	input[FIELD_COUNT];
 
 	printAddPanel();
 	if (getUserInput(field_, input, FIELD_COUNT))
@@ -152,15 +152,15 @@ void	PhoneBook::saveContact(std::string *input) {
 }
 
 int		PhoneBook::searchContact(void) {
-	std::string input;
-	std::string message = "Please enter the index number of contact. (0 to close)";
-	int index;
+	std::string	input;
+	std::string	message = "Please enter the index number of contact. (0 to close)";
+	int			index;
 
 	getUserInput(&message, &input, 1);
 	try {
 		index = std::stoi(input, 0, 10);
 	} catch (const std::exception& exception) {
-		std::cout << RED << ">> " << exception.what() << EOC << std::endl;
+		std::cout << RED << ">> " << "Command Error." << EOC << std::endl;
 		return 3;
 	}
 	if (index == 0)
