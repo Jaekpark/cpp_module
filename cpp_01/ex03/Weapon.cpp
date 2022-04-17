@@ -1,10 +1,10 @@
 #include "Weapon.hpp"
 
-const std::string &Weapon::getType(void) const {
+const std::string&	Weapon::getType(void) const {
 	return type_;
 }
 
-void	Weapon::setType(const std::string &type) {
+void				Weapon::setType(const std::string& type) {
 	std::cout << BLUE << "> ";
 	std::cout << "Weapon type is chaged : " << type_ << " -> " << type << std::endl;
 	std::cout << EOC;

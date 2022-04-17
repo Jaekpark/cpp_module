@@ -15,7 +15,7 @@ RM					=	rm -rf
 CFLAGS				=	-Wall -Wextra -Werror -g -std=c++98
 DFLAGS				= 	-Wall -Wextra -Werror -g -std=c++98 -fsanitize=address
 HEADER_FLAG			=	-I$(INCS_DIR)
-NAME				=	HiThisIsBrain
+NAME				=	hithisisbrain
 
 #	Color settings
 BLACK			=	"\033[1;30m"

@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 
-void	Zombie::announce( void ) const {
+void	Zombie::announce(void) const {
 	std::cout << CYAN;
 	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 	std::cout << EOC;

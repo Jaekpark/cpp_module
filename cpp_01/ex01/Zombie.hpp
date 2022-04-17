@@ -12,17 +12,19 @@
 
 #include <iostream>
 #include <string>
+#include <sstream>
 
 class Zombie {
 	private:
 		std::string	_name;
 		Zombie(void);
+
 	public:
-		void			setZombieName( std::string name );
-		void			announce( void ) const;
-		static Zombie*	zombieHorde( int N, std::string name );
-		Zombie( std::string name );
-		~Zombie( void );
+		void			setZombieName(std::string name);
+		void			announce(void) const;
+		static Zombie*	zombieHorde(int N, std::string name);
+		Zombie(std::string name);
+		~Zombie(void);
 };
 
 #endif

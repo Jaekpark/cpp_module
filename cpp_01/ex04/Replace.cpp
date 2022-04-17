@@ -1,9 +1,9 @@
 #include "Replace.hpp"
 
 void	Replace::replaceWord (std::string *str, const std::string& s1, const std::string& s2) {
-	std::size_t found = 0;
+	std::size_t	found = 0;
 	std::string	result;
-	std::string after;
+	std::string	after;
 	
 	if (!str || s1.empty() || s2.empty())
 		return ;
@@ -21,10 +21,10 @@ void	Replace::replaceWord (std::string *str, const std::string& s1, const std::s
 }
 
 void	Replace::replaceFile(const std::string& file, const std::string& s1, const std::string& s2) {
-	std::ifstream input;
-	std::ofstream output;
-	std::stringstream ss;
-	std::string temp;
+	std::ifstream		input;
+	std::ofstream		output;
+	std::stringstream	ss;
+	std::string			temp;
 
 	if (file.empty() || s1.empty() || s2.empty()) {
 		std::cerr << "Empty string." << std::endl;

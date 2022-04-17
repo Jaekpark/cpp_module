@@ -12,10 +12,10 @@ INCS_FILE			= 	$(addprefix $(INCS_DIR), $(INCS))
 #	Compile settings
 CC					=	clang++
 RM					=	rm -rf
-CFLAGS				=	-Wall -Wextra -Werror -g -std=c++98
+CFLAGS				=	-Wall -Wextra -Werror -g -std=c++98 -fsanitize=address
 DFLAGS				= 	-Wall -Wextra -Werror -g -std=c++98 -fsanitize=address
 HEADER_FLAG			=	-I$(INCS_DIR)
-NAME				=	 UnnecessaryViolence
+NAME				=	 violence
 
 #	Color settings
 BLACK			=	"\033[1;30m"
