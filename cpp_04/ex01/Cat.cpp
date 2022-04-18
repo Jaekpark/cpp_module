@@ -9,6 +9,7 @@ void	Cat::makeSound(void) const {
 }
 
 Cat::Cat(void) : Animal() {
+	brain_ = new Brain();
 	setType(CAT);
 	printPanel(CAT, YELLOW, WIDTH);
 	printPanel(LOG, BLUE, WIDTH);
@@ -34,6 +35,7 @@ Cat::Cat(const Cat& ref) : Animal(ref) {
 }
 
 Cat::~Cat(void) {
+	delete(brain_);
 	printPanel(CAT, YELLOW, WIDTH);
 	printPanel(LOG, BLUE, WIDTH);
 	printPanel(DES, RED, WIDTH);

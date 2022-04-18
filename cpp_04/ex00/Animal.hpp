@@ -23,8 +23,7 @@
 #include <string>
 #include <iomanip>
 
-class Animal
-{
+class	Animal {
 	private:
 		std::string		type_;
 
