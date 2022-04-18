@@ -33,7 +33,7 @@ void		Animal::printLog(const std::string str) const {
 	std::cout << std::setw(7) << "| " << str << EOC << std::endl;
 }
 
-void			Animal::printType(void) const {
+void		Animal::printType(void) const {
 	if (getType().empty()) {
 		printPanel(ANIMAL, EOC);
 		printPanel(FUNC, CYAN);
