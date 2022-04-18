@@ -26,35 +26,35 @@
 #include <string>
 #include <iomanip>
 
-class ClapTrap {
+class	ClapTrap {
 	private:
-		std::string name_;
-		unsigned int hp_;
-		unsigned int ep_;
-		unsigned int damage_;
+		std::string			name_;
+		unsigned int		hp_;
+		unsigned int		ep_;
+		unsigned int		damage_;
 
 	protected:
-		const unsigned int default_hp_;
-		const unsigned int default_ep_;
-		const unsigned int default_damage_;
-		const std::string trap_name_;
+		const unsigned int	default_hp_;
+		const unsigned int	default_ep_;
+		const unsigned int	default_damage_;
+		const std::string	trap_name_;
 
 	public:
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		void				attack(const std::string& target);
+		void				takeDamage(unsigned int amount);
+		void				beRepaired(unsigned int amount);
 
-		std::string	getName(void) const;
-		unsigned int getHp(void) const;
-		unsigned int getEp(void) const;
-		unsigned int getDamage(void) const;
-		static void	printGame(void);
-		void	printStatus(void) const;
-		void	printName(std::string str, std::string color) const;
-		static void	printPanel(std::string str, std::string color);
-		void	setHp(unsigned int hp);
-		void	setEp(unsigned int ep);
-		void	setDamage(unsigned int damage);
+		std::string			getName(void) const;
+		unsigned int		getHp(void) const;
+		unsigned int		getEp(void) const;
+		unsigned int		getDamage(void) const;
+		static void			printGame(void);
+		static void			printPanel(std::string str, std::string color);
+		void				printStatus(void) const;
+		void				printName(std::string str, std::string color) const;
+		void				setHp(unsigned int hp);
+		void				setEp(unsigned int ep);
+		void				setDamage(unsigned int damage);
 
 		ClapTrap(void);
 		ClapTrap(const std::string &name);

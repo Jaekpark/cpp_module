@@ -1,20 +1,20 @@
 #include "DiamondTrap.hpp"
 
-void DiamondTrap::attack(const std::string& target) {
+void		DiamondTrap::attack(const std::string& target) {
 	ScavTrap::attack(target);
 }
 
-std::string DiamondTrap::getDiamondName(void) {
+std::string	DiamondTrap::getDiamondName(void) {
 	return name_;
 }
 
-void DiamondTrap::printDiamondName(std::string str, std::string color) {
+void 		DiamondTrap::printDiamondName(std::string str, std::string color) {
 	std::cout << color;
 	std::cout << "[" << name_ << "] " << str << " [clap name : " << ClapTrap::name_ << "]" << std::endl;
 	std::cout << EOC;
 }
 
-void DiamondTrap::whoAmI(void) const {
+void		DiamondTrap::whoAmI(void) const {
 	printPanel("WhoAmI", YELLOW);
 	std::cout << GREEN << "[" << name_ <<"]" << EOC << std::endl;
 }

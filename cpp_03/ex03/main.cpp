@@ -2,16 +2,16 @@
 
 int main(void) {
 	ClapTrap::printGame();
-	DiamondTrap clap("Ash");
-	DiamondTrap trap("Kaisa");
+	DiamondTrap clap("DM4D-TP 00");
+	DiamondTrap trap("DM4D-TP 01");
 
 	clap.printStatus();
 	trap.printStatus();
 
-	clap.attack("Kaisa");
+	clap.attack(trap.getName());
 	trap.takeDamage(6);
 
-	trap.attack("Ash");
+	trap.attack(clap.getName());
 	clap.takeDamage(5);
 
 	clap.highFivesGuys();
@@ -23,13 +23,14 @@ int main(void) {
 
 	clap.whoAmI();
 	trap.whoAmI();
-	// trap.attack("Ash");
-	// clap.takeDamage(10);
 
 	for (int i = 0; i < 10; i++)
 		clap.beRepaired(1);
 	clap.printStatus();
 	trap.printStatus();
+
+	clap.takeDamage(100);
+	clap.printStatus();
 
 	return 0;
 }

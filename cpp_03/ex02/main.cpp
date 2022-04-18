@@ -2,16 +2,16 @@
 
 int main(void) {
 	ClapTrap::printGame();
-	FragTrap clap("Ash");
-	FragTrap trap(clap);
+	FragTrap clap("FR4G-TP 00");
+	FragTrap trap("FR4G-TP 01");
 
 	clap.printStatus();
 	trap.printStatus();
 
-	clap.attack("Kaisa");
+	clap.attack(trap.getName());
 	trap.takeDamage(6);
 
-	trap.attack("Ash");
+	trap.attack(clap.getName());
 	clap.takeDamage(5);
 
 	clap.highFivesGuys();
@@ -21,13 +21,13 @@ int main(void) {
 	clap.beRepaired(3);
 	trap.beRepaired(4);
 
-	// trap.attack("Ash");
-	// clap.takeDamage(10);
-
 	for (int i = 0; i < 10; i++)
 		clap.beRepaired(1);
 	clap.printStatus();
 	trap.printStatus();
+
+	clap.takeDamage(100);
+	clap.printStatus();
 
 	return 0;
 }

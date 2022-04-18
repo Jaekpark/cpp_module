@@ -1,32 +1,34 @@
 #include "ClapTrap.hpp"
 
-std::string ClapTrap::getName(void) const {
+std::string		ClapTrap::getName(void) const {
 	return this->name_;
 }
 
-unsigned int ClapTrap::getHp(void) const {
+unsigned int	ClapTrap::getHp(void) const {
 	return this->hp_;
 }
-unsigned int ClapTrap::getEp(void) const {
+
+unsigned int	ClapTrap::getEp(void) const {
 	return this->ep_;
 }
-unsigned int ClapTrap::getDamage(void) const {
+
+unsigned int	ClapTrap::getDamage(void) const {
 	return this->damage_;
 }
 
-void	ClapTrap::setHp(unsigned int hp) {
+void			ClapTrap::setHp(unsigned int hp) {
 	this->hp_ = hp;
 }
 
-void	ClapTrap::setEp(unsigned int ep) {
+void			ClapTrap::setEp(unsigned int ep) {
 	this->ep_ = ep;
 }
 
-void	ClapTrap::setDamage(unsigned int damage) {
+void			ClapTrap::setDamage(unsigned int damage) {
 	this->damage_ = damage;
 }
 
-void	ClapTrap::attack(const std::string& target) {
+void			ClapTrap::attack(const std::string& target) {
 	printPanel("Clap Attack", YELLOW);
 	if (!this->hp_) {
 		std::cout << RED << "[" << name_ << "] " << "already died." << std::endl;
@@ -43,7 +45,7 @@ void	ClapTrap::attack(const std::string& target) {
 	std::cout << EOC;
 }
 
-void ClapTrap::takeDamage(unsigned int amount) {
+void			ClapTrap::takeDamage(unsigned int amount) {
 	printPanel(DAMAGE, CYAN);
 	if (!hp_) {
 		printName("already died.", RED);
@@ -61,7 +63,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 	std::cout << hp_ << "]" << EOC << std::endl;
 }
 
-void ClapTrap::beRepaired(unsigned int amount) {
+void			ClapTrap::beRepaired(unsigned int amount) {
 	if (!this->ep_) {
 		printPanel(REPAIR, BLUE);
 		printName("Can't repair, not enough Energy.", BLUE);
@@ -82,12 +84,12 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	std::cout << " = " << hp_  << "]" << EOC << std::endl;
 }
 
-void	ClapTrap::printPanel(std::string str, std::string color) {
+void			ClapTrap::printPanel(std::string str, std::string color) {
 	std::cout << color << "[" << std::setw(WIDTH) << str << "]";
 	std::cout << "\t" << EOC;
 }
 
-void	ClapTrap::printStatus(void) const {
+void			ClapTrap::printStatus(void) const {
 	int pad = 17;
 
 	printPanel(STATUS, MAGENTA);
@@ -98,13 +100,13 @@ void	ClapTrap::printStatus(void) const {
 	std::cout << std::setw(WIDTH + pad) << CYAN << "DAMAGE\t:\t" << damage_ << std::endl << std::endl << EOC;
 }
 
-void	ClapTrap::printName(std::string str, std::string color) const {
+void			ClapTrap::printName(std::string str, std::string color) const {
 	std::cout << color;
 	std::cout << "[" << this->name_ << "] " << str << std::endl;
 	std::cout << EOC;
 }
 
-void	ClapTrap::printGame(void) {
+void			ClapTrap::printGame(void) {
 	std::cout << YELLOW;
 	std::cout << std::setw(80) << std::setfill('=') << "" << std::endl;
 	std::cout << std::setw(45) << std::setfill(' ') << "42 Borderlands" << std::endl;

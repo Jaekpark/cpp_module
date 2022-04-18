@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-void ScavTrap::attack(const std::string& target) {
+void	ScavTrap::attack(const std::string& target) {
 	printPanel("Scav Attack", YELLOW);
 	if (!ClapTrap::getHp()) {
 		std::cout << RED << "[" << ClapTrap::getName() << "] " << "already died." << std::endl;
@@ -17,7 +17,7 @@ void ScavTrap::attack(const std::string& target) {
 	std::cout << EOC;
 }
 
-void ScavTrap::guardGate(void) {
+void	ScavTrap::guardGate(void) {
 	ClapTrap::printPanel("Mode Changed", YELLOW);
 	if (!ClapTrap::getHp()) {
 		ClapTrap::printName("already died.", RED);

@@ -8,10 +8,10 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class	ScavTrap : public ClapTrap {
 	public:
-		void attack(const std::string& target);
-		void guardGate(void);
+		void	attack(const std::string& target);
+		void	guardGate(void);
 		
 		ScavTrap(void);
 		ScavTrap(const std::string& name);

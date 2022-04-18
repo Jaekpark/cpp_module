@@ -1,6 +1,6 @@
 #include "FragTrap.hpp"
 
-void FragTrap::highFivesGuys(void) {
+void	FragTrap::highFivesGuys(void) {
 	printPanel("High_Five", YELLOW);
 	printName("gives a High Five", YELLOW);
 }
