@@ -1,5 +1,5 @@
-INCS				=	Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
-SRCS				=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp
+INCS				=	Animal.hpp Cat.hpp Dog.hpp Brain.hpp
+SRCS				=	main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
 OBJS				= 	$(patsubst %.cpp, %.o, $(SRCS_FILE))
 SRCS_DIR			=	./
 OBJS_DIR			=	./

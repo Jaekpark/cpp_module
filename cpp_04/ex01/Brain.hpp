@@ -1,19 +1,44 @@
 #ifndef BRAIN_H
 #define BRAIN_H
 
+#define SIZE 100
+#define RED "\033[0;31m"
+#define GREEN "\033[0;32m"
+#define YELLOW "\033[0;33m"
+#define BLUE "\033[0;34m"
+#define MAGENTA "\033[0;35m"
+#define CYAN "\033[0;36m"
+#define EOC "\033[0m"
+#define BOLD "\033[1m"
+#define WIDTH 18
+
+
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <istream>
+#include <fstream>
+#include <ostream>
+#include <sstream>
+#include <cstdlib>
 
-class Brain {
+class	Brain {
 	private:
+		std::string ideas_[SIZE];
 
 	public:
-	
-	Brain(void);
-	Brain(const Brain& ref);
-	Brain& operator=(const Brain& ref);
-	~Brain();
+		void	setIdea(const int& index, const std::string& idea);
+		void	setBrain(void);
+		void	printBrain(int& id, std::string& type);
+		void	printLog(const std::string str, const std::string color) const;
+		void	printLog(const std::string str) const;
+		void	printPanel(const std::string str, const std::string color, int width);
+		void	printPanel(const std::string str, const std::string color);
+		void	printPanel(const std::string str);
+		Brain(void);
+		Brain(const Brain& ref);
+		Brain& operator=(const Brain& ref);
+		~Brain();
 };
 
 #endif

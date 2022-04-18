@@ -26,9 +26,14 @@
 class Animal
 {
 	private:
+		static int		animal_count_;
+	
+	protected:
 		std::string		type_;
+		int				id_;
 
 	public:
+		static int		getAnimalCount(void);
 		static void		printHeader(void);
 		static void		printPanel(const std::string str, const std::string color, int width);
 		static void		printPanel(const std::string str, const std::string color);
@@ -37,6 +42,8 @@ class Animal
 		void			printLog(const std::string str, const std::string color) const;
 		void			printType(void) const;
 		virtual void	makeSound(void) const;
+		virtual void	printBrain(void);
+		int				getId(void) const;
 		std::string		getType(void) const;
 		void			setType(const std::string& type);
 

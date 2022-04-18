@@ -1,5 +1,11 @@
 #include "Animal.hpp"
 
+int			Animal::animal_count_ = 0;
+
+int			Animal::getAnimalCount(void) {
+	return animal_count_;
+}
+
 void		Animal::printPanel(const std::string str, const std::string color, int width) {
 	std::cout << BOLD << "[" << color << std::setw(width) << str << EOC;
 	std::cout << BOLD << " ] " << EOC;
@@ -55,6 +61,17 @@ void		Animal::makeSound(void) const {
 	printLog("Unavailable.", RED);
 }
 
+void		Animal::printBrain(void) {
+	printPanel(ANIMAL, EOC, WIDTH);
+	printPanel(FUNC, CYAN, WIDTH);
+	printPanel("Print Brain", YELLOW);
+	printLog("Unavailable.", RED);
+}
+
+int			Animal::getId(void) const {
+	return id_;
+}
+
 std::string Animal::getType(void) const {
 	return type_;
 }
@@ -63,19 +80,21 @@ void		Animal::setType(const std::string& type) {
 	type_ = type;
 }
 
-Animal::Animal(void) {
+Animal::Animal(void) : id_(animal_count_) {
 	printPanel(ANIMAL, EOC, WIDTH);
 	printPanel(LOG, BLUE, WIDTH);
 	printPanel(CONS, GREEN, WIDTH);
 	printLog("Animal Instance Created.");
+	animal_count_++;
 }
 
-Animal::Animal(const Animal& ref) {
+Animal::Animal(const Animal& ref) : id_(animal_count_) {
 	printPanel(ANIMAL, EOC, WIDTH);
 	printPanel(LOG, BLUE, WIDTH);
 	printPanel(COPY, YELLOW, WIDTH);
 	printLog("Animal Instance Created.");
 	type_ = ref.getType();
+	animal_count_++;
 }
 
 Animal& Animal::operator=(const Animal& ref) {
@@ -85,6 +104,8 @@ Animal& Animal::operator=(const Animal& ref) {
 	printLog("Assign Completed.");
 	if (this != &ref) {
 		type_ = ref.type_;
+		id_ = animal_count_;
+		animal_count_++;
 	}
 	return *this;
 }
@@ -94,4 +115,5 @@ Animal::~Animal(void) {
 	printPanel(LOG, BLUE, WIDTH);
 	printPanel(DES, RED, WIDTH);
 	printLog("Animal Instance deleted.");
+	animal_count_--;
 }

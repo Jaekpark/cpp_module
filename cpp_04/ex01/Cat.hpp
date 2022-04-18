@@ -8,10 +8,12 @@
 
 class	Cat : public Animal {
 	private:
-		Brain *brain_;
+		Brain*	brain_;
+		void	newBrain(void);
 
 	public:
 		void	makeSound(void) const;
+		void	printBrain(void);
 
 		Cat(void);
 		Cat(const Cat& ref);
