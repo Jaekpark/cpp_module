@@ -41,13 +41,14 @@ class ClapTrap {
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 
+		static void	printGame(void);
 		std::string	getName(void) const;
 		unsigned int getHp(void) const;
 		unsigned int getEp(void) const;
 		unsigned int getDamage(void) const;
 		void	printStatus(void) const;
 		void	printName(std::string str, std::string color) const;
-		void	printPanel(std::string str, std::string color) const;
+		static void	printPanel(std::string str, std::string color);
 		void	setHp(unsigned int hp);
 		void	setEp(unsigned int ep);
 		void	setDamage(unsigned int damage);

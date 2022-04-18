@@ -1,6 +1,7 @@
 #include "ScavTrap.hpp"
 
 int main(void) {
+	ClapTrap::printGame();
 	ScavTrap clap("Ash");
 	ScavTrap trap("Kaisa");
 

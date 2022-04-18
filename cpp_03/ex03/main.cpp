@@ -1,6 +1,7 @@
 #include "DiamondTrap.hpp"
 
 int main(void) {
+	ClapTrap::printGame();
 	DiamondTrap clap("Ash");
 	DiamondTrap trap("Kaisa");
 

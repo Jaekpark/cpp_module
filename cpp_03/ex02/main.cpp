@@ -1,6 +1,7 @@
 #include "FragTrap.hpp"
 
 int main(void) {
+	ClapTrap::printGame();
 	FragTrap clap("Ash");
 	FragTrap trap(clap);
 

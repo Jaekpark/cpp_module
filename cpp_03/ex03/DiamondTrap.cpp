@@ -10,7 +10,7 @@ std::string DiamondTrap::getDiamondName(void) {
 
 void DiamondTrap::printDiamondName(std::string str, std::string color) {
 	std::cout << color;
-	std::cout << "[" << name_ << "] " << str << "\t[clap name : " << ClapTrap::name_ << "]" << std::endl;
+	std::cout << "[" << name_ << "] " << str << " [clap name : " << ClapTrap::name_ << "]" << std::endl;
 	std::cout << EOC;
 }
 
@@ -26,7 +26,7 @@ DiamondTrap::DiamondTrap(void) : ClapTrap(std::string(D_NAME) + "_clap_name") {
 	*(const_cast<std::string *>(&trap_name_)) = NAME;
 	name_ = NAME;
 	printPanel(NAME, BLUE);
-	printDiamondName("Upgrade to DiamondTrap", MAGENTA);
+	printDiamondName("Upgrade to DiamondTrap. Awesome!!", MAGENTA);
 	ClapTrap::setHp(default_hp_);
 	ClapTrap::setEp(default_ep_);
 	ClapTrap::setDamage(default_damage_);
@@ -39,7 +39,7 @@ DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(std::string(name) +
 	*(const_cast<std::string *>(&trap_name_)) = NAME;
 	name_ = name;
 	printPanel(NAME, BLUE);
-	printDiamondName("Upgrade to DiamondTrap", MAGENTA);
+	printDiamondName("Upgrade to DiamondTrap. Awesome!!", MAGENTA);
 	ClapTrap::setHp(default_hp_);
 	ClapTrap::setEp(default_ep_);
 	ClapTrap::setDamage(default_damage_);

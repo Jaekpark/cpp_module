@@ -82,18 +82,20 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	std::cout << " = " << hp_  << "]" << EOC << std::endl;
 }
 
-void	ClapTrap::printPanel(std::string str, std::string color) const {
+void	ClapTrap::printPanel(std::string str, std::string color) {
 	std::cout << color << "[" << std::setw(WIDTH) << str << "]";
 	std::cout << "\t" << EOC;
 }
 
 void	ClapTrap::printStatus(void) const {
+	int pad = 17;
+
 	printPanel(STATUS, MAGENTA);
 	printName("Status", MAGENTA);
-	std::cout << std::setw(WIDTH) << GREEN << "NAME\t:\t" << name_ << std::endl;
-	std::cout << std::setw(WIDTH) << YELLOW << "HP\t:\t" << hp_ << std::endl;
-	std::cout << std::setw(WIDTH) << BLUE << "EP\t:\t" << ep_ << std::endl;
-	std::cout << std::setw(WIDTH) << CYAN << "DAMAGE\t:\t" << damage_ << std::endl << std::endl << EOC;
+	std::cout << std::setw(WIDTH + pad) << GREEN << "NAME\t:\t" << name_ << std::endl;
+	std::cout << std::setw(WIDTH + pad) << YELLOW << "HP\t:\t" << hp_ << std::endl;
+	std::cout << std::setw(WIDTH + pad) << BLUE << "EP\t:\t" << ep_ << std::endl;
+	std::cout << std::setw(WIDTH + pad) << CYAN << "DAMAGE\t:\t" << damage_ << std::endl << std::endl << EOC;
 }
 
 void	ClapTrap::printName(std::string str, std::string color) const {
@@ -102,14 +104,28 @@ void	ClapTrap::printName(std::string str, std::string color) const {
 	std::cout << EOC;
 }
 
+void	ClapTrap::printGame(void) {
+	std::cout << YELLOW;
+	std::cout << std::setw(80) << std::setfill('=') << "" << std::endl;
+	std::cout << std::setw(45) << std::setfill(' ') << "42 Borderlands" << std::endl;
+	std::cout << std::setw(80) << std::setfill('=') << "" << std::endl << std::endl;;
+	std::cout << std::setfill(' ') << EOC;
+	std::cout << std::setw(80) << std::setfill('=') << "" << std::endl;
+	std::cout << std::setfill(' ') << EOC;
+	printPanel("Type", BOLD);
+	std::cout << BOLD << "[" << std::setw(54) << "System Log" << "]" << EOC << std::endl;
+	std::cout << std::setw(80) << std::setfill('=') << "" << std::endl;
+	std::cout << std::setfill(' ') << EOC;
+}
+
 ClapTrap::ClapTrap(void) 
-	: name_(D_NAME), hp_(D_HP), ep_(D_EP), damage_(D_DAMAGE), default_hp_(D_HP), default_ep_(D_EP), default_damage_(D_DAMAGE) {
+	: name_(D_NAME), default_hp_(D_HP), default_ep_(D_EP), default_damage_(D_DAMAGE), hp_(D_HP), ep_(D_EP), damage_(D_DAMAGE) {
 	printPanel(D_NAME, YELLOW);
 	printName("Welcome to Borderlands.", GREEN);
 }
 
 ClapTrap::ClapTrap(const std::string &name)
-	: name_(name), hp_(D_HP), ep_(D_EP), damage_(D_DAMAGE), default_hp_(D_HP), default_ep_(D_EP), default_damage_(D_DAMAGE) {
+	: name_(name), default_hp_(D_HP), default_ep_(D_EP), default_damage_(D_DAMAGE), hp_(D_HP), ep_(D_EP), damage_(D_DAMAGE){
 	printPanel(D_NAME, YELLOW);
 	printName("Welcome to Borderlands.", GREEN);
 }
@@ -120,9 +136,6 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &ref) {
 		hp_ = ref.getHp();
 		ep_ = ref.getEp();
 		damage_ = ref.getDamage();
-		default_hp_ = D_HP;
-		default_ep_ = D_EP;
-		default_damage_ = D_DAMAGE;
 	}
 	printPanel(D_NAME, YELLOW);
 	printName("Welcome to Borderlands.", GREEN);
@@ -130,8 +143,8 @@ ClapTrap& ClapTrap::operator=(const ClapTrap &ref) {
 }
 
 ClapTrap::ClapTrap(const ClapTrap &ref) 
-	: name_(ref.getName()), hp_(ref.getHp()), ep_(ref.getEp()), damage_(ref.getDamage())
-	, default_damage_(ref.default_damage_), default_ep_(ref.default_ep_), default_hp_(ref.default_hp_) {
+	: name_(ref.getName()), default_hp_(ref.default_hp_), default_ep_(ref.default_ep_), default_damage_(ref.default_damage_)
+	, hp_(ref.getHp()), ep_(ref.getEp()), damage_(ref.getDamage()) {
 	printPanel(D_NAME, YELLOW);
 	printName("Welcome to Borderlands.", GREEN);
 }
