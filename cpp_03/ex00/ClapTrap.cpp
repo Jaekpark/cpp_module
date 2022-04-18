@@ -103,7 +103,7 @@ void	ClapTrap::printName(std::string str, std::string color) const {
 }
 
 ClapTrap::ClapTrap(void) 
-	: name_(name), hp_(D_HP), ep_(D_EP), damage_(D_DAMAGE), default_hp_(D_HP), default_ep_(D_EP), default_damage_(D_DAMAGE) {
+	: name_(D_NAME), hp_(D_HP), ep_(D_EP), damage_(D_DAMAGE), default_hp_(D_HP), default_ep_(D_EP), default_damage_(D_DAMAGE) {
 	printPanel(D_NAME, YELLOW);
 	printName("Welcome to Borderlands.", GREEN);
 }
