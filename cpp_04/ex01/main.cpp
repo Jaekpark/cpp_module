@@ -11,6 +11,21 @@ void	printInfo(std::string str) {
 	std::cout << std::setfill(' ');
 }
 
+void	test(void) {
+	int num = 30;
+	Animal* animals[num];
+
+	for (int i = 0; i < num; i++){
+		if (i < (num / 2)) {
+			animals[num] = new Dog();
+		} else {
+			animals[num] = new Cat();
+		}
+	}
+	for (int i = 0; i < num; i++)
+		delete animals[i];
+}
+
 int main(void) {
 	Animal::printHeader();
 	Animal* j = new Dog();
@@ -21,5 +36,8 @@ int main(void) {
 
 	delete(j);
 	delete(i);
+
+	test();
+	
 	return 0;
 }
