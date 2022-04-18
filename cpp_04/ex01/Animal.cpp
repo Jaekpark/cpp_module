@@ -7,17 +7,18 @@ int			Animal::getAnimalCount(void) {
 }
 
 void		Animal::printPanel(const std::string str, const std::string color, int width) {
-	std::cout << BOLD << "[" << color << std::setw(width) << str << EOC;
+	std::cout << BOLD << "[" << color << std::setw(width) << getId() << str << EOC;
 	std::cout << BOLD << " ] " << EOC;
 }
 
 void		Animal::printPanel(const std::string str, const std::string color) {
-	std::cout << BOLD << "[" << color << std::setw(WIDTH) << str << EOC;
+
+	std::cout << BOLD << "[" << color << std::setw(WIDTH) << id_ << str << EOC;
 	std::cout << BOLD << " ] " << EOC;
 }
 
 void		Animal::printPanel(const std::string str) {
-	std::cout << BOLD << "[" << std::setw(WIDTH) << str << EOC;
+	std::cout << BOLD << "[" << std::setw(WIDTH) << id_ << str << EOC;
 	std::cout << BOLD << " ] " << EOC;
 }
 
@@ -68,7 +69,7 @@ void		Animal::printBrain(void) {
 	printLog("Unavailable.", RED);
 }
 
-int			Animal::getId(void) const {
+int			Animal::getId(void) {
 	return id_;
 }
 

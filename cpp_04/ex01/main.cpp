@@ -15,15 +15,16 @@ void	test(void) {
 	int num = 30;
 	Animal* animals[num];
 
+	Animal::printHeader();
 	for (int i = 0; i < num; i++){
 		if (i < (num / 2)) {
-			animals[num] = new Dog();
+			animals[i] = new Dog();
 		} else {
-			animals[num] = new Cat();
+			animals[i] = new Cat();
 		}
 	}
-	for (int i = 0; i < num; i++)
-		delete animals[i];
+	for (int j = 0; j < num; j++)
+		delete animals[j];
 }
 
 int main(void) {

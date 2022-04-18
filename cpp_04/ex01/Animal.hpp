@@ -43,7 +43,7 @@ class Animal
 		void			printType(void) const;
 		virtual void	makeSound(void) const;
 		virtual void	printBrain(void);
-		int				getId(void) const;
+		int				getId(void);
 		std::string		getType(void) const;
 		void			setType(const std::string& type);
 
