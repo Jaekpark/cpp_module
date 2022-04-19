@@ -83,36 +83,6 @@ void		Animal::printType(void) const {
 	}
 }
 
-void		Animal::makeSound(void) const {
-	printClassPanel(*this);
-	printPanel(FUNC, CYAN, WIDTH);
-	printPanel("Make Sound", YELLOW);
-	printLog("Unavailable.", RED);
-}
-
-void		Animal::printBrain(void) {
-	printClassPanel(*this);
-	printPanel(FUNC, CYAN, WIDTH);
-	printPanel("Print Brain", YELLOW);
-	printLog("Unavailable.", RED);
-}
-
-void		Animal::printBrain(int index) {
-	std::stringstream ss;
-	std::string name;
-	ss << index;
-
-	name = "idea ";
-	name += ss.str();
-	if (index < 0) {
-		return ;
-	}
-	printClassPanel(*this);
-	printPanel(FUNC, CYAN, WIDTH);
-	printPanel("Print Idea", MAGENTA);
-	printLog("Unavailable.", RED);
-}
-
 int			Animal::getId(void) const {
 	return id_;
 }

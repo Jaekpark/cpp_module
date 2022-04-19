@@ -44,9 +44,9 @@ class Animal
 		void			printLog(const std::string str) const;
 		void			printLog(const std::string str, const std::string color) const;
 		void			printType(void) const;
-		virtual void	makeSound(void) const;
-		virtual void	printBrain(void);
-		virtual void	printBrain(int index);
+		virtual void	makeSound(void) const = 0;
+		virtual void	printBrain(void) = 0;
+		virtual void	printBrain(int index) = 0;
 		int				getId(void) const;
 		std::string		getType(void) const;
 		void			setType(const std::string& type);

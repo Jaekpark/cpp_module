@@ -75,9 +75,8 @@ int main(void) {
 	Animal* i = new Cat(); // 1
 	Dog	*dog = new Dog(); // 2
 	Cat *cat = new Cat(); // 3
-	Animal *copy_animal = new Animal(); // 4
-	Dog *copy_dog = new Dog(*dog); // 5
-	Cat *copy_cat = new Cat(*cat); // 6
+	Dog *copy_dog = new Dog(*dog); // 4
+	Cat *copy_cat = new Cat(*cat); // 5
 
 	j->printBrain(1);
 	i->printBrain(1);
@@ -85,13 +84,11 @@ int main(void) {
 	cat->printBrain(1);
 	copy_dog->printBrain(1);
 	copy_cat->printBrain(1);
-	copy_animal->printBrain(1);
 
 	delete(j);
 	delete(i);
 	delete(dog);
 	delete(cat);
-	delete(copy_animal);
 	delete(copy_dog);
 	delete(copy_cat);
 	printInfo("End Default Test");
