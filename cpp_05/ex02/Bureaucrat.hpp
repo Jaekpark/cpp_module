@@ -5,11 +5,15 @@
 #include <exception>
 #include <string>
 #include <sstream>
+#include <fstream>
 #include "Console.hpp"
+#include "Form.hpp"
 
 #define MIN 150
 #define MAX 1
 #define ME "Bureaucrat"
+
+class Form;
 
 class Bureaucrat {
 	private:
@@ -28,9 +32,8 @@ class Bureaucrat {
 		int					getGrade(void) const;
 		void				increment(void);
 		void				decrement(void);
-
-		void				printClassPanel(const Bureaucrat& target) const;
-
+		void				signForm(Form& doc) const;
+		void				executeForm(Form& doc) const;
 
 		class GradeTooHighException : public std::exception {
 			public:
