@@ -2,8 +2,8 @@
 
 void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
 	condition(executor);
-	srand(std::time(NULL));
-	int			num = rand() % 10;
+	WellRandom	gen;
+	unsigned int num = gen.getValue(9);
 	std::string drill =
 						"                      _________\n"
 						"                     /~~~~~~~~~\\\n"
@@ -46,8 +46,10 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
 		std::cout << GREEN << "ddddduuuuuuuuududuuuududududududuu" << std::endl;
 		std::cout << YELLOW << getName() <<  GREEN " has been robotomized successfully" << EOC << std::endl << std::endl;
 	} else {
+		Console::panel("Robotomy", MAGENTA);
+		std::cout << std::endl << std::endl;
 		std::cout << RED "???..ddd....dd..??? (broken...)" << std::endl;
-		std::cout << YELLOW << getName() << RED << " failed to be robotomized" << std::endl;
+		std::cout << YELLOW << getName() << RED << " failed to be robotomized" << EOC std::endl << std::endl;
 	}
 }
 

@@ -3,12 +3,13 @@
 
 #include <iostream>
 #include <exception>
-#include <cstdlib>
 #include <string>
+#include <cstdlib>
 #include <sstream>
 #include <fstream>
 #include "Console.hpp"
 #include "Form.hpp"
+#include "WellRandom.hpp"
 
 #define MIN 150
 #define MAX 1
