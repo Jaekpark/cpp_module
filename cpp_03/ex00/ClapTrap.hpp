@@ -1,5 +1,5 @@
-#ifndef CLAPTRAP_H
-#define CLAPTRAP_H
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #define RED "\033[1;31m"
 #define GREEN "\033[0;32m"

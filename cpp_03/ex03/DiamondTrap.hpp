@@ -1,10 +1,10 @@
-#ifndef DIAMONDTRAP_H
-#define DIAMONDTRAP_H
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-#define NAME "DiamondTrap"
+#define NAME	"DiamondTrap"
 
 class	DiamondTrap : public ScavTrap, public FragTrap {
 	private:

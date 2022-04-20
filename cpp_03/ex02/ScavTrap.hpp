@@ -1,10 +1,10 @@
-#ifndef SCAVTRAP_H
-#define SCAVTRAP_H
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-#define S_HP 100
-#define S_EP 50
-#define S_DAMAGE 20
-#define S_NAME "ScavTrap"
+#define S_HP		100
+#define S_EP		50
+#define S_DAMAGE	20
+#define S_NAME 		ScavTrap"
 
 #include "ClapTrap.hpp"
 

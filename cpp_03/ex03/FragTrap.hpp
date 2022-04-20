@@ -1,12 +1,12 @@
-#ifndef FRAGTRAP_H
-#define FRAGTRAP_H
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
 
-#define F_HP 100
-#define F_EP 100
-#define F_DAMAGE 30
-#define F_NAME "FragTrap"
+#define F_HP 		100
+#define F_EP 		100
+#define F_DAMAGE 	30
+#define F_NAME 		"FragTrap"
 
 class	FragTrap : virtual public ClapTrap {
 	public:

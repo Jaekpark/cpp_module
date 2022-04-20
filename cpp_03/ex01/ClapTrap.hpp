@@ -1,26 +1,26 @@
 #ifndef CLAPTRAP_H
 #define CLAPTRAP_H
 
-#define RED "\033[1;31m"
-#define GREEN "\033[0;32m"
-#define YELLOW "\033[0;33m"
-#define BLUE "\033[0;34m"
-#define MAGENTA "\033[0;35m"
-#define CYAN "\033[0;36m"
-#define EOC "\033[0m"
-#define BOLD "\033[1m"
-#define ANNOUNCE "Announcement"
-#define CONS "Constructor"
-#define DES "Destructor"
-#define ATTACK "Attack"
-#define REPAIR "Repair"
-#define DAMAGE "Damaged"
-#define STATUS "Status"
-#define D_NAME "ClapTrap"
-#define D_HP 10
-#define D_EP 10
-#define D_DAMAGE 0
-#define WIDTH 15
+#define RED			"\033[1;31m"
+#define GREEN		"\033[0;32m"
+#define YELLOW		"\033[0;33m"
+#define BLUE		"\033[0;34m"
+#define MAGENTA		"\033[0;35m"
+#define CYAN		"\033[0;36m"
+#define EOC			"\033[0m"
+#define BOLD		"\033[1m"
+#define ANNOUNCE	"Announcement"
+#define CONS		"Constructor"
+#define DES			"Destructor"
+#define ATTACK		"Attack"
+#define REPAIR		"Repair"
+#define DAMAGE		"Damaged"
+#define STATUS		"Status"
+#define D_NAME		"ClapTrap"
+#define D_HP		10
+#define D_EP		10
+#define D_DAMAGE	0
+#define WIDTH		15
 
 #include <iostream>
 #include <string>
