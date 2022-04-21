@@ -32,34 +32,40 @@ void firstTest(void) {
 }
 
 void	secondTest(void) {	
-	printInfo("Animal (virtual function)");
+	printInfo("Animal (virtual)");
 	Animal::printHeader();
 
 	const Animal* correct_meta = new Animal();
 	const Animal* correct = new Cat();
+	const Cat* cc = new Cat();
 
 	correct_meta->printType();
 	correct->printType();
 	correct_meta->makeSound();
 	correct->makeSound();
+	cc->makeSound();
 	
 	delete(correct_meta);
 	delete(correct);
+	delete(cc);
 
 	std::cout << std::endl;
-	printInfo("Wrong Animal (non-virtual function)");
+	printInfo("Wrong Animal (non-virtual)");
 
 	WrongAnimal::printHeader();
 	const WrongAnimal* wrong_meta = new WrongAnimal();
 	const WrongAnimal* wrong = new WrongCat();
+	const WrongCat* wc = new WrongCat();
 
 	wrong_meta->printType();
 	wrong->printType();
 	wrong_meta->makeSound();
 	wrong->makeSound();
+	wc->makeSound();
 
 	delete(wrong_meta);
 	delete(wrong);
+	delete(wc);
 }
 
 int main(void) {

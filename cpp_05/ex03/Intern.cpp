@@ -55,6 +55,6 @@ Intern& 		Intern::operator=(const Intern& ref) {
 std::ostream&	operator<<( std::ostream& out, const Intern& ref) {
 	static_cast<void>(ref);
 
-	out << "I'm Intern... Please....";
+	out << "I'm Intern... Please....I want to be a full-time employee.";
 	return out;
 }

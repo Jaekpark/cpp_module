@@ -1,7 +1,7 @@
-#ifndef WRONGCAT_H
-#define WRONGCAT_H
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#define W_CAT "Cat"
+#define W_CAT "Wrong Cat"
 
 #include "WrongAnimal.hpp"
 

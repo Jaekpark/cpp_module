@@ -1,23 +1,23 @@
-#ifndef WRONGANIMAL_H
-#define WRONGANIMAL_H
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
-#define RED "\033[0;31m"
-#define GREEN "\033[0;32m"
-#define YELLOW "\033[0;33m"
-#define BLUE "\033[0;34m"
-#define MAGENTA "\033[0;35m"
-#define CYAN "\033[0;36m"
-#define EOC "\033[0m"
-#define BOLD "\033[1m"
-#define WIDTH 18
+#define RED	 		"\033[0;31m"
+#define GREEN	 	"\033[0;32m"
+#define YELLOW	 	"\033[0;33m"
+#define BLUE		"\033[0;34m"
+#define MAGENTA		"\033[0;35m"
+#define CYAN		"\033[0;36m"
+#define EOC			"\033[0m"
+#define BOLD		"\033[1m"
+#define WIDTH	 	18
 
-#define W_ANIMAL "Wrong Animal"
-#define CONS "Constructor"
-#define DES "Destructor"
-#define COPY "Copy Constructor"
-#define ASSG "Assignment"
-#define LOG "System Log"
-#define FUNC "Function Log"
+#define W_ANIMAL	"Wrong Animal"
+#define CONS		"Constructor"
+#define DES			"Destructor"
+#define COPY		"Copy Constructor"
+#define ASSG		"Assignment"
+#define LOG			"System Log"
+#define FUNC		"Function Log"
 
 #include <iostream>
 #include <string>

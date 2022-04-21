@@ -10,7 +10,7 @@ OBJS_FILE			= 	$(addprefix $(OBJS_DIR), $(notdir $(OBJS)))
 INCS_FILE			= 	$(addprefix $(INCS_DIR), $(INCS))
 
 #	Compile settings
-CC					=	clang++
+CC					=	c++
 RM					=	rm -rf
 CFLAGS				=	-Wall -Wextra -Werror -g -std=c++98
 DFLAGS				= 	-Wall -Wextra -Werror -g -std=c++98 -fsanitize=address

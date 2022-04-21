@@ -1,5 +1,5 @@
-#ifndef DOG_H
-#define DOG_H
+#ifndef DOG_HPP
+#define DOG_HPP
 
 #define DOG "Dog"
 
@@ -16,7 +16,6 @@ class	Dog : public Animal {
 		void	makeSound(void) const;
 		void	printBrain(void);
 		void	printBrain(int index);
-		// void	printBrainIdea(int index);
 
 		Dog(void);
 		Dog(const Dog& ref);

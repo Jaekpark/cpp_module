@@ -10,7 +10,7 @@ OBJS_FILE			= 	$(addprefix $(OBJS_DIR), $(notdir $(OBJS)))
 INCS_FILE			= 	$(addprefix $(INCS_DIR), $(INCS))
 
 #	Compile settings
-CC					=	clang++
+CC					=	c++
 RM					=	rm -rf
 CFLAGS				=	-Wall -Wextra -Werror -g -std=c++98
 DFLAGS				= 	-Wall -Wextra -Werror -g -std=c++98 -fsanitize=address
@@ -58,13 +58,8 @@ $(DEBUG)		:	$(OBJS_DIR) $(OBJS)
 $(OBJS_DIR)		:
 					@mkdir -p $(OBJS_DIR)
 
-norm			:	$(SRCS_FILE) $(INCS_FILE)
-					@echo $(CYAN) "`date +%y/%m/%d_%H:%M:%S`:: $(NAME) norm check"$(EOC)
-					@norminette $(SRCS_FILE) $(INCS_FILE)
-					@make norm -C $(LIBFT_DIR)
-
 leaks			:
-	 				@osascript -e 'tell app "Terminal" to do script "while true; do leaks minishell; sleep 2; clear; done"'
+	 				@osascript -e 'tell app "Terminal" to do script "while true; do leaks $(NAME); sleep 2; clear; done"'
 
 clean			:
 					@echo $(YELLOW) "`date +%y/%m/%d_%H:%M:%S`:: clean $(NAME)" $(EOC)
@@ -78,4 +73,4 @@ fclean			:
 
 re				:	fclean $(NAME)
 
-.PHONY:			all clean fclean re norm leaks debug
+.PHONY:			all clean fclean re leaks debug

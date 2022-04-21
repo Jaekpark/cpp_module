@@ -1,5 +1,5 @@
-#ifndef CAT_H
-#define CAT_H
+#ifndef CAT_HPP
+#define CAT_HPP
 
 #define CAT "Cat"
 
@@ -16,7 +16,6 @@ class	Cat : public Animal {
 		void	makeSound(void) const;
 		void	printBrain(void);
 		void	printBrain(int index);
-		// void	printBrainIdea(int index);
 
 		Cat(void);
 		Cat(const Cat& ref);

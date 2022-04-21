@@ -38,7 +38,6 @@ void	Cat::newBrain(const Brain& target) {
 
 Cat::Cat(void) : Animal() {
 	setType(CAT);
-	// printPanel(CAT, YELLOW, WIDTH);
 	printClassPanel(*this, YELLOW);
 	printPanel(LOG, BLUE, WIDTH);
 	printPanel(CONS, GREEN, WIDTH);
