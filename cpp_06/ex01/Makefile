@@ -1,5 +1,5 @@
-INCS				=	Data.hpp
-SRCS				=	main.cpp Data.cpp
+INCS				=	Data.hpp Console.hpp
+SRCS				=	main.cpp Data.cpp Console.cpp
 OBJS				= 	$(patsubst %.cpp, %.o, $(SRCS_FILE))
 SRCS_DIR			=	./
 OBJS_DIR			=	./
@@ -15,7 +15,7 @@ RM					=	rm -rf
 CFLAGS				=	-Wall -Wextra -Werror -g -std=c++98
 DFLAGS				= 	-Wall -Wextra -Werror -g -std=c++98 -fsanitize=address
 HEADER_FLAG			=	-I$(INCS_DIR)
-NAME				=	convert
+NAME				=	serialization
 
 #	Color settings
 BLACK			=	"\033[1;30m"

@@ -9,7 +9,6 @@ void	convertSingleChar(char *input) {
 }
 
 int 	main(int argc, char **argv) {
-	// Convert::isZeroDecimal(argv[1]);
 	try {
 		if (argc != 2)
 			throw std::logic_error("convert : Try ./convert [target]");

@@ -9,6 +9,8 @@
 #include <iostream>
 #include <string>
 #include <ostream>
+#include <stdexcept>
+#include "Console.hpp"
 
 class Data {
 	private:
@@ -22,7 +24,7 @@ class Data {
 		int			getSpeed(void) const;
 		int			getAd(void) const;
 		int			getAp(void) const;
-
+		void		test(void);
 		Data(void);
 		Data(std::string name, int speed, int ad, int ap);
 		Data(const Data& ref);

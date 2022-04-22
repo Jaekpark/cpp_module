@@ -21,11 +21,15 @@ int main(void) {
 	Bureaucrat biden("Joe Biden", 1);
 	Bureaucrat harris("Kamala Harris", 10);
 	Bureaucrat putin("Vladimir Putin", 50);
+	Bureaucrat except_high("some", 0);
+	Bureaucrat except_low("some", 160);
 
 	Form nuclear("launch a Nuclear", 1, 1);
 	Form tax("Raising taxes", 15, 5);
 	Form martial("Martial Law", 20, 10);
 	Form resign("Resign", 140, 140);
+	Form form_high("high", 0, 130);
+	Form form_low("low", 140, 180);
 
 	putin.signForm(nuclear);
 	putin.signForm(tax);

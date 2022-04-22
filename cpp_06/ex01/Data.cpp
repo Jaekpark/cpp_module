@@ -3,7 +3,7 @@
 Data::Data(void) : name_(NAME), speed_(SPEED), ad_(AD), ap_(AP) {}
 
 Data::Data(std::string name, int speed, int ad, int ap)
-	: name_(NAME), speed_(SPEED), ad_(AD), ap_(AP) {}
+	: name_(name), speed_(speed), ad_(ad), ap_(ap) {}
 
 Data::Data(const Data& ref)
 	: name_(ref.getName()), speed_(ref.getSpeed()), ad_(ref.getAd()), ap_(ref.getAp()) {}
@@ -41,9 +41,11 @@ uintptr_t		serialize(Data* ptr) {
 }
 
 Data*			deserialize(uintptr_t raw) {
-	return reinterpret_cast<Data
+	return reinterpret_cast<Data *>(raw);
 }
 
 std::ostream&	operator<<(std::ostream& out, const Data& ref) {
+	out << &ref;
 
+	return out;
 }

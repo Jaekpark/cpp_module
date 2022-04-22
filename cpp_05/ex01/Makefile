@@ -12,7 +12,7 @@ INCS_FILE			= 	$(addprefix $(INCS_DIR), $(INCS))
 #	Compile settings
 CC					=	c++
 RM					=	rm -rf
-CFLAGS				=	-Wall -Wextra -Werror -g -std=c++98
+CFLAGS				=	-Wall -Wextra -Werror -std=c++98
 DFLAGS				= 	-Wall -Wextra -Werror -g -std=c++98 -fsanitize=address
 HEADER_FLAG			=	-I$(INCS_DIR)
 NAME				=	a.out

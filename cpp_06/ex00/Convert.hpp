@@ -24,7 +24,7 @@
 class Convert {
 	private:
 		double		value_;
-
+		
 		Convert(void);
 
 	public:

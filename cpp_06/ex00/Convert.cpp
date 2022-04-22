@@ -65,6 +65,22 @@ void Convert::printInt(void) {
 	}
 }
 
+static bool check(double value) {
+	if (value == HUGE_VAL || value == -HUGE_VAL)
+		return true;
+	else if (isnan(value))
+		return true;
+	return false;
+}
+
+static bool check(float value) {
+	if (value == HUGE_VAL || value == -HUGE_VAL)
+		return true;
+	else if (isnan(value))
+		return true;
+	return false;
+}
+
 void Convert::printFloat(void) {
 	int prec = std::numeric_limits<float>::digits10;
 
@@ -73,7 +89,7 @@ void Convert::printFloat(void) {
 		ss << toFloat();
 		std::string flt(ss.str());
 		size_t found = flt.find(".");
-		if (found == std::string::npos)
+		if (found == std::string::npos && !check(toFloat()) )
 			std::cout << FLT << std::setprecision(prec) << flt << SUFIX_FLT_DEC << std::endl;
 		else
 			std::cout << FLT << std::setprecision(prec) << flt << SUFIX_FLT << std::endl;
@@ -90,7 +106,7 @@ void Convert::printDouble(void) {
 		ss << toDouble();
 		std::string dbl(ss.str());
 		size_t found = dbl.find(".");
-		if (found == std::string::npos)
+		if (found == std::string::npos && !check(toDouble()))
 			std::cout << DBL << std::setprecision(prec) << toDouble() << SUFIX_DEC << std::endl;
 		else
 			std::cout << DBL << std::setprecision(prec) << toDouble() << std::endl;
